@@ -3,7 +3,7 @@ package ru.yandex.practicum.process;
 import java.util.Objects;
 
 public class Coordinates {
-    public  final Integer HEIGHT;
+    public final Integer HEIGHT;
     public final Integer WIDTH;
 
     public Coordinates(Integer height, Integer width) {

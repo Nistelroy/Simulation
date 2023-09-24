@@ -14,6 +14,9 @@ public class Map {
         emtitys.coordinates = coordinates;
         maps.put(coordinates, emtitys);
     }
+    public Emtity getEnemy(Coordinates coordinates) {
+        return maps.get(coordinates);
+    }
 
     public void startRandomEmtitysPosicion() {
         // for (int i = 0; i < 8; i++) {
