@@ -9,4 +9,6 @@ public class Herbivore extends Creature{
     public Herbivore(Coordinates coordinates, int healsPoint) {
         super(coordinates, healsPoint);
     }
+
+
 }

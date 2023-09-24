@@ -7,4 +7,6 @@ public class Grass extends Emtity {
     public Grass(Coordinates coordinates) {
         super(coordinates);
     }
+
+
 }
