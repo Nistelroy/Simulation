@@ -7,15 +7,23 @@ public class Simulation {
     public static void main(String[] args) {
 
         Map map = new Map();
-        MapRender action = new MapRender();
-        action.creatingTheNewWorld(map);
-        action.render(map);
+        MapRender mapRender = new MapRender();
+        mapRender.creatingTheNewWorld(map);
+        Action action = new Action();
         System.out.println(" "+ map.maps.entrySet().size());
+        while (true) {
+            mapRender.render(map);
+            action.nextTurn(map);
+            System.out.println(" "+ map.maps.entrySet().size());
+        }
+
+
         }
 
 
 
-    }
+
+}
    // nextTurn() -  // просимулировать и отрендерить один ход
    // startSimulation() - // запустить бесконечный цикл симуляции и рендеринга
    // pauseSimulation() - // приостановить бесконечный цикл симуляции и рендеринга
