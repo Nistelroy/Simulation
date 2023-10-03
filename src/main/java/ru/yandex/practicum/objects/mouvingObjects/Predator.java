@@ -4,7 +4,10 @@ import ru.yandex.practicum.process.Coordinates;
 
 public class Predator extends Creature{
 
-   // move();
+   public void move(){
+      // System.out.println("хищник шаг");
+       coordinates = new Coordinates(coordinates.height +1,coordinates.width +1 );
+   }
    // punch();
 
     public Predator(Coordinates coordinates, int healsPoint) {
