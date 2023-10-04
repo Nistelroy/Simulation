@@ -1,13 +1,12 @@
 package ru.yandex.practicum.objects.mouvingObjects;
 
 
-
+import ru.yandex.practicum.Simulation;
 import ru.yandex.practicum.objects.notMouvingObjects.Rock;
 import ru.yandex.practicum.objects.notMouvingObjects.Tree;
 import ru.yandex.practicum.process.Action;
 import ru.yandex.practicum.process.Coordinates;
 import ru.yandex.practicum.process.Map;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +39,7 @@ public class Herbivore extends Creature {
         possibleStep.add(cor6);
         possibleStep.add(cor7);
         possibleStep.add(cor8);
-        System.out.println(possibleStep.size()+"размер возможных ходов");
+        System.out.println(possibleStep.size()+"размер возможных ходов - 1");
 
         for (int i = 0; i < possibleStep.size(); i++) {
 
@@ -53,21 +52,45 @@ public class Herbivore extends Creature {
                     possibleStep.remove(possibleStep.get(i));
                 } else if (Herbivore.class.equals(map.maps.get(possibleStep.get(i)).getClass())) {
                     possibleStep.remove(possibleStep.get(i));
-
                 }
-
             }
 
+            }
+        System.out.println(possibleStep.size()+"размер возможных ходов - 2");
+        for (int i = 0; i < possibleStep.size(); i++) {
+            if (possibleStep.get(i).height > Simulation.XX-1 || possibleStep.get(i).width > Simulation.YY-1) {
+                possibleStep.remove(possibleStep.get(i));
+            }
         }
-        System.out.println(possibleStep.size()+"размер возможных ходов");
+        System.out.println(possibleStep.size()+"размер возможных ходов - 3");
+        for (int i = 0; i < possibleStep.size(); i++) {
+            if (possibleStep.get(i).height > Simulation.XX-1 || possibleStep.get(i).width > Simulation.YY-1) {
+                possibleStep.remove(possibleStep.get(i));
+            }
+        }
+        System.out.println(possibleStep.size()+"размер возможных ходов - 4");
+        for (int i = 0; i < possibleStep.size(); i++) {
+            if (possibleStep.get(i).height < 0 || possibleStep.get(i).width < 0) {
+                possibleStep.remove(possibleStep.get(i));
+            }
+        }
+        System.out.println(possibleStep.size()+"размер возможных ходов - 5");
+        for (int i = 0; i < possibleStep.size(); i++) {
+            if (possibleStep.get(i).height < 0 || possibleStep.get(i).width < 0) {
+                possibleStep.remove(possibleStep.get(i));
+            }
+        }
+
+
+        System.out.println(possibleStep.size()+"размер возможных ходов - 6");
 
         for (int i = 0; i < possibleStep.size(); i++) {
 
-            System.out.println("шаг "+possibleStep.get(i).width+" "+possibleStep.get(i).height+" "+ i);
+            System.out.println("шаг "+possibleStep.get(i).width+" "+possibleStep.get(i).height+" "+ (i+1));
 
         }
         for (int i = 0; i < grassCor.size(); i++) {
-            System.out.println("трава "+grassCor.get(i).width+" "+grassCor.get(i).height+" "+ i);
+            System.out.println("трава "+grassCor.get(i).width+" "+grassCor.get(i).height+" "+ (i+1));
 
         }
 
