@@ -16,8 +16,8 @@ public class Action {
 
 
     public List<Coordinates> findGrass(Map map) {
-        for (int i = 1; i < Simulation.XX + 1; i++) {
-            for (int j = 1; j < Simulation.YY + 1; j++) {
+        for (int i = 0; i < Simulation.XX ; i++) {
+            for (int j = 0; j < Simulation.YY; j++) {
                 Coordinates cor = new Coordinates(i, j);
                 if (map.maps.get(cor) != null) {
                     if (Grass.class.equals(map.maps.get(cor).getClass())) {
@@ -33,13 +33,13 @@ public class Action {
         List<Coordinates> predatorCor = new ArrayList<>();
         List<Coordinates> herbivoreCor = new ArrayList<>();
         List<Coordinates> objectCor = new ArrayList<>();
-        for (int i = 1; i < Simulation.XX + 1; i++) {
-            for (int j = 1; j < Simulation.YY + 1; j++) {
+        for (int i = 0; i < Simulation.XX ; i++) {
+            for (int j = 0; j < Simulation.YY ; j++) {
                 Coordinates cor = new Coordinates(i, j);
                 if (map.maps.get(cor) != null) {
                     if (Rock.class.equals(map.maps.get(cor).getClass())) {
                         objectCor.add(cor);
-                    }else if(Tree.class.equals(map.maps.get(cor).getClass())){
+                    } else if (Tree.class.equals(map.maps.get(cor).getClass())) {
                         objectCor.add(cor);
                     } else if (Predator.class.equals(map.maps.get(cor).getClass())) {
                         predatorCor.add(cor);
@@ -52,24 +52,27 @@ public class Action {
                 }
             }
         }
+
         for (int i = 0; i < predatorCor.size(); i++) {
             map.maps.get(predatorCor.get(i));
             System.out.println("ВОлк найден");
 
         }
         for (int i = 0; i < herbivoreCor.size(); i++) {
-            System.out.println(herbivoreCor.get(i).height +"---"+super.hashCode()+ " зебра игрик");
-            System.out.println(herbivoreCor.get(i).width +"---"+super.hashCode()+ " зебра икс");
+            System.out.println(herbivoreCor.get(i).height + "---" + herbivoreCor.get(i).hashCode() + " зебра икс");
+            System.out.println(herbivoreCor.get(i).width + "---" + herbivoreCor.get(i).hashCode() + " зебра игрик");
             map.maps.get(herbivoreCor.get(i));
             System.out.println("овц найден");
             Herbivore herbivore = (Herbivore) map.maps.get(herbivoreCor.get(i));
             Coordinates cor1 = herbivore.move(map);
             map.maps.put(cor1, herbivore);
             map.maps.remove(herbivoreCor.get(i));
-            System.out.println(herbivoreCor.get(i).height +"---"+super.hashCode()+ " зебра игрик");
-            System.out.println(herbivoreCor.get(i).width +"---"+super.hashCode()+ " зебра икс");
+            System.out.println(herbivoreCor.get(i).height + "---" + herbivoreCor.get(i).hashCode() + " зебра икс");
+            System.out.println(herbivoreCor.get(i).width + "---" + herbivoreCor.get(i).hashCode() + " зебра игрик");
+
+
         }
     }
-}
 
+}
 

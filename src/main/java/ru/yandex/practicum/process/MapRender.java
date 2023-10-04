@@ -12,13 +12,13 @@ public class MapRender {
     Random random = new Random();
     int notMoving;
 
-    List<Coordinates> noGrassCor = new ArrayList<>();
+    // List<Coordinates> noGrassCor = new ArrayList<>();
     public void creatingTheNewWorld(Map map) {
 
         notMoving = Simulation.XX * Simulation.YY / 7;
         int moving = Simulation.XX * Simulation.YY / 30;
         while (true) {
-            Coordinates coordinates1 = new Coordinates(random.nextInt(Simulation.XX + 1), random.nextInt(Simulation.YY + 1));
+            Coordinates coordinates1 = new Coordinates(random.nextInt(Simulation.XX ), random.nextInt(Simulation.YY ));
             if (map.maps.entrySet().size() < notMoving) {
                 if (map.maps.get(coordinates1) == null) {
                     Emtity emtity = new Grass(coordinates1);
@@ -27,12 +27,12 @@ public class MapRender {
             } else if (map.maps.entrySet().size() < notMoving * 2) {
                 if (map.maps.get(coordinates1) == null) {
                     Emtity emtity = new Rock(coordinates1);
-                    noGrassCor.add(coordinates1);
+                  //  noGrassCor.add(coordinates1);
                     map.setEmtity(coordinates1, emtity);
                 }
             } else if (map.maps.entrySet().size() < notMoving * 3) {
                 if (map.maps.get(coordinates1) == null) {
-                    noGrassCor.add(coordinates1);
+                 //   noGrassCor.add(coordinates1);
                     Emtity emtity = new Tree(coordinates1);
                     map.setEmtity(coordinates1, emtity);
                 }
@@ -56,9 +56,9 @@ public class MapRender {
 
 
     public void render(Map map) {
-        for (int i = 1; i < Simulation.XX + 1; i++) {
+        for (int i = 0; i < Simulation.XX ; i++) {
             System.out.println();
-            for (int j = 1; j < Simulation.YY + 1; j++) {
+            for (int j = 0; j < Simulation.YY ; j++) {
                 Coordinates cor = new Coordinates(i, j);
                 if (map.maps.get(cor) == null) {
                     System.out.print("  ☘ ");

@@ -3,10 +3,10 @@ package ru.yandex.practicum.process;
 import java.util.Objects;
 
 public class Coordinates {
-    public Integer height;
-    public Integer width;
+    public int height;
+    public int width;
 
-    public Coordinates(Integer height, Integer width) {
+    public Coordinates(int height, int width) {
         this.height = height;
         this.width = width;
     }

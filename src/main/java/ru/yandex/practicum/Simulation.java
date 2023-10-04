@@ -10,13 +10,13 @@ public class Simulation {
         MapRender mapRender = new MapRender();
         mapRender.creatingTheNewWorld(map);
         Action action = new Action();
-     //   System.out.println(" "+ map.maps.entrySet().size());
+
         while (true) {
             System.out.println();
             mapRender.render(map);
             Thread.sleep(1000);
             action.nextTurn(map);
-       //     System.out.println(" "+ map.maps.entrySet().size());
+
 
        }
 
