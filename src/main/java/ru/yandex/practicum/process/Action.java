@@ -4,87 +4,69 @@ import ru.yandex.practicum.Simulation;
 import ru.yandex.practicum.objects.mouvingObjects.Herbivore;
 import ru.yandex.practicum.objects.mouvingObjects.Predator;
 import ru.yandex.practicum.objects.notMouvingObjects.Grass;
-import ru.yandex.practicum.objects.notMouvingObjects.Rock;
-import ru.yandex.practicum.objects.notMouvingObjects.Tree;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Action {
 
-    List<Coordinates> grassCor = new ArrayList<>();
-    List<Coordinates> herbivoreCorS = new ArrayList<>();
+    List<Coordinates> listGrassesCoordinate = new ArrayList<>();
+    List<Coordinates> listHerbivoresCoordinate = new ArrayList<>();
 
-    public List<Coordinates> findGrass(Map map) {
+    public List<Coordinates> findAllGrasses(Map map) {
         for (int i = 0; i < Simulation.XX ; i++) {
             for (int j = 0; j < Simulation.YY; j++) {
-                Coordinates cor = new Coordinates(i, j);
-                if (map.maps.get(cor) != null) {
-                    if (Grass.class.equals(map.maps.get(cor).getClass())) {
-                        grassCor.add(cor);
+                Coordinates coordinates = new Coordinates(i, j);
+                if (map.maps.get(coordinates) != null) {
+                    if (Grass.class.equals(map.maps.get(coordinates).getClass())) {
+                        listGrassesCoordinate.add(coordinates);
                     }
                 }
             }
         }
-        return grassCor;
+        return listGrassesCoordinate;
     }
-    public List<Coordinates> findHerbivoreCor(Map map) {
+    public List<Coordinates> findHerbivoresCoordinates(Map map) {
         for (int i = 0; i < Simulation.XX ; i++) {
             for (int j = 0; j < Simulation.YY; j++) {
-                Coordinates cor = new Coordinates(i, j);
-                if (map.maps.get(cor) != null) {
-                    if (Herbivore.class.equals(map.maps.get(cor).getClass())) {
-                        herbivoreCorS.add(cor);
+                Coordinates coordinates = new Coordinates(i, j);
+                if (map.maps.get(coordinates) != null) {
+                    if (Herbivore.class.equals(map.maps.get(coordinates).getClass())) {
+                        listHerbivoresCoordinate.add(coordinates);
                     }
                 }
             }
         }
-        return herbivoreCorS;
+        return listHerbivoresCoordinate;
     }
 
     public void nextTurn(Map map) {
-        List<Coordinates> predatorCor = new ArrayList<>();
-        List<Coordinates> herbivoreCor = new ArrayList<>();
-        List<Coordinates> objectCor = new ArrayList<>();
-        for (int i = 0; i < Simulation.XX ; i++) {
-            for (int j = 0; j < Simulation.YY ; j++) {
-                Coordinates cor = new Coordinates(i, j);
-                if (map.maps.get(cor) != null) {
-                    if (Rock.class.equals(map.maps.get(cor).getClass())) {
-                        objectCor.add(cor);
-                    } else if (Tree.class.equals(map.maps.get(cor).getClass())) {
-                        objectCor.add(cor);
-                    } else if (Predator.class.equals(map.maps.get(cor).getClass())) {
-                        predatorCor.add(cor);
-                        objectCor.add(cor);
-                    } else if (Herbivore.class.equals(map.maps.get(cor).getClass())) {
-                        herbivoreCor.add(cor);
-                        objectCor.add(cor);
+        List<Coordinates> listPredatorCoordinates = new ArrayList<>();
+        List<Coordinates> listHerbivoreCoordinates = new ArrayList<>();
 
+    for (int i = 0; i < Simulation.XX ; i++) {
+        for (int j = 0; j < Simulation.YY ; j++) {
+            Coordinates coordinates = new Coordinates(i, j);
+                if (map.maps.get(coordinates) != null) {
+                     if (Predator.class.equals(map.maps.get(coordinates).getClass())) {
+                        listPredatorCoordinates.add(coordinates);
+                    } else if (Herbivore.class.equals(map.maps.get(coordinates).getClass())) {
+                        listHerbivoreCoordinates.add(coordinates);
                     }
                 }
             }
         }
-
-
-        for (int i = 0; i < herbivoreCor.size(); i++) {
-
-            Herbivore herbivore = (Herbivore) map.maps.get(herbivoreCor.get(i));
-            Coordinates cor1 = herbivore.move(map);
-            map.maps.put(cor1, herbivore);
-            map.maps.remove(herbivoreCor.get(i));
-
-
-
+    for (int i = 0; i < listHerbivoreCoordinates.size(); i++) {
+            Herbivore herbivore = (Herbivore) map.maps.get(listHerbivoreCoordinates.get(i));
+            Coordinates coordinates = herbivore.move(map);
+            map.maps.put(coordinates, herbivore);
+            map.maps.remove(listHerbivoreCoordinates.get(i));
         }
-        for (int i = 0; i < predatorCor.size(); i++) {
-
-
-           Predator predator = (Predator) map.maps.get(predatorCor.get(i));
-           Coordinates cor1 = predator.move(map);
-           map.maps.put(cor1, predator);
-           map.maps.remove(predatorCor.get(i));
-
+    for (int i = 0; i < listPredatorCoordinates.size(); i++) {
+           Predator predator = (Predator) map.maps.get(listPredatorCoordinates.get(i));
+           Coordinates coordinates = predator.move(map);
+           map.maps.put(coordinates, predator);
+           map.maps.remove(listPredatorCoordinates.get(i));
         }
     }
 

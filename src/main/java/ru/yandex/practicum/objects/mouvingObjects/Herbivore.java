@@ -8,13 +8,24 @@ import ru.yandex.practicum.process.Map;
 import java.util.List;
 
 public class Herbivore extends Creature {
-
+    
+    public Herbivore(Coordinates coordinates) {
+        super(coordinates);
+    }
+    
     public Coordinates move(Map map) {
         Action action = new Action();
-        List<Coordinates> grassCor = action.findGrass(map);
+        List<Coordinates> listGrassesCoordinates = action.findAllGrasses(map);
         List<Coordinates> possibleStep = getPossibleStepHerb(coordinates.height,coordinates.width,map);
+        
+        int indexBestMove = getIndexGrassInGrassCoordinates(listGrassesCoordinates, possibleStep);
+        
+        coordinates.height = possibleStep.get(indexBestMove).height;
+        coordinates.width = possibleStep.get(indexBestMove).width;
+        return coordinates;
+    }
 
-
+    private int getIndexGrassInGrassCoordinates(List<Coordinates> grassCor, List<Coordinates> possibleStep) {
         int closeMinStepForGrass = Simulation.XX*5;
         int indexGrassInGrassCor = -1;
         for (int i = 0; i < grassCor.size(); i++) {
@@ -41,15 +52,7 @@ public class Herbivore extends Creature {
                 indexGrassInGrassCor1 = i;
             }
         }
-
-
-        coordinates.height = possibleStep.get(indexGrassInGrassCor1).height;
-        coordinates.width = possibleStep.get(indexGrassInGrassCor1).width;
-        return coordinates;
-    }
-
-    public Herbivore(Coordinates coordinates, int healsPoint) {
-        super(coordinates, healsPoint);
+        return indexGrassInGrassCor1;
     }
 
 

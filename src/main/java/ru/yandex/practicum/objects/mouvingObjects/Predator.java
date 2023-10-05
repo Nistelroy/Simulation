@@ -11,20 +11,20 @@ public class Predator extends Creature{
 
    public Coordinates move(Map map){
        Action action = new Action();
-       List<Coordinates> possibleStep = getPossibleStepPred(coordinates.height,coordinates.width,map);
-       List<Coordinates> herbivoreCor = action.findHerbivoreCor(map);
+       List<Coordinates> possibleStep = getListPossibleStepPredator(coordinates.height,coordinates.width,map);
+       List<Coordinates> listHerbivoreCoordinates = action.findHerbivoresCoordinates(map);
 
 
        int closeMinStepForHerb = Simulation.XX*5;
        int indexGrassInHerbCor = -1;
-       for (int i = 0; i < herbivoreCor.size(); i++) {
+       for (int i = 0; i < listHerbivoreCoordinates.size(); i++) {
 
 
-           int closeXX = Math. abs(coordinates.height - herbivoreCor.get(i).height);
-           int closeYY = Math. abs(coordinates.width - herbivoreCor.get(i).width);
-           if (closeXX+closeYY < closeMinStepForHerb)
+           int minX = Math. abs(coordinates.height - listHerbivoreCoordinates.get(i).height);
+           int minY = Math. abs(coordinates.width - listHerbivoreCoordinates.get(i).width);
+           if (minX+minY < closeMinStepForHerb)
            {
-               closeMinStepForHerb = closeXX+closeYY;
+               closeMinStepForHerb = minX+minY;
                indexGrassInHerbCor = i;
 
            }
@@ -33,8 +33,8 @@ public class Predator extends Creature{
        int closeMinStepForGrass1 = Simulation.XX*5;
        int indexGrassInGrassCor1 = -1;
        for (int i = 0; i < possibleStep.size(); i++) {
-           int closeXX = Math. abs(possibleStep.get(i).height - herbivoreCor.get(indexGrassInHerbCor).height);
-           int closeYY = Math. abs(possibleStep.get(i).width - herbivoreCor.get(indexGrassInHerbCor).width);
+           int closeXX = Math. abs(possibleStep.get(i).height - listHerbivoreCoordinates.get(indexGrassInHerbCor).height);
+           int closeYY = Math. abs(possibleStep.get(i).width - listHerbivoreCoordinates.get(indexGrassInHerbCor).width);
            if (closeXX+closeYY < closeMinStepForGrass1)
            {
                closeMinStepForGrass1 = closeXX+closeYY;
@@ -53,7 +53,7 @@ public class Predator extends Creature{
    }
 
 
-    public Predator(Coordinates coordinates, int healsPoint) {
-        super(coordinates, healsPoint);
+    public Predator(Coordinates coordinates) {
+        super(coordinates);
     }
 }

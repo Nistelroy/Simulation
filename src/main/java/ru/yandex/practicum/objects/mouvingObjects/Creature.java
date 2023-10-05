@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Creature extends Emtity {
-    int healsPoint;
 
-    public Creature(Coordinates coordinates, int healsPoint) {
+
+    public Creature(Coordinates coordinates) {
         super(coordinates);
-        this.healsPoint = healsPoint;
+
     }
     public List<Coordinates> getPossibleStepHerb(int height, int width, Map map) {
 
@@ -34,7 +34,7 @@ public abstract class Creature extends Emtity {
                 }
             }
         }
-        if (coordinates.height == 0 || coordinates.height == 9 ||coordinates.width == 0 || coordinates.width == 9 ) {
+        if (coordinates.height == 0 || coordinates.height == Simulation.XX - 1 ||coordinates.width == 0 || coordinates.width == Simulation.YY - 1 ) {
 
             for (int j = 0; j < Simulation.XX/3; j++) {
                 for (int i = 0; i < possibleStep.size(); i++) {
@@ -51,7 +51,8 @@ public abstract class Creature extends Emtity {
         }
      return possibleStep;
     }
-    public List<Coordinates> getPossibleStepPred(int height, int width, Map map) {
+
+    public List<Coordinates> getListPossibleStepPredator(int height, int width, Map map) {
 
         List<Coordinates> possibleStep = getCoordinates(height, width);
 
@@ -66,7 +67,7 @@ public abstract class Creature extends Emtity {
                 }
             }
         }
-        if (coordinates.height == 0 || coordinates.height == 9 ||coordinates.width == 0 || coordinates.width == 9 ) {
+        if (coordinates.height == 0 || coordinates.height == Simulation.XX - 1 ||coordinates.width == 0 || coordinates.width == Simulation.YY - 1 ) {
 
             for (int j = 0; j < Simulation.XX/3; j++) {
                 for (int i = 0; i < possibleStep.size(); i++) {
@@ -85,24 +86,25 @@ public abstract class Creature extends Emtity {
     }
 
     private static List<Coordinates> getCoordinates(int height, int width) {
-        Coordinates cor1 = new Coordinates(height +1, width -1);
-        Coordinates cor2 = new Coordinates(height +1, width);
-        Coordinates cor3 = new Coordinates(height +1, width +1);
-        Coordinates cor4 = new Coordinates(height, width -1);
-        Coordinates cor5 = new Coordinates(height, width +1);
-        Coordinates cor6 = new Coordinates(height -1, width -1);
-        Coordinates cor7 = new Coordinates(height -1, width);
-        Coordinates cor8 = new Coordinates(height -1, width +1);
+        Coordinates step1 = new Coordinates(height +1, width -1);
+        Coordinates step2 = new Coordinates(height +1, width);
+        Coordinates step3 = new Coordinates(height +1, width +1);
+        Coordinates step4 = new Coordinates(height, width -1);
+        Coordinates step5 = new Coordinates(height, width +1);
+        Coordinates step6 = new Coordinates(height -1, width -1);
+        Coordinates step7 = new Coordinates(height -1, width);
+        Coordinates step8 = new Coordinates(height -1, width +1);
 
         List<Coordinates> possibleStep = new ArrayList<>();
-        possibleStep.add(cor1);
-        possibleStep.add(cor2);
-        possibleStep.add(cor3);
-        possibleStep.add(cor4);
-        possibleStep.add(cor5);
-        possibleStep.add(cor6);
-        possibleStep.add(cor7);
-        possibleStep.add(cor8);
+        possibleStep.add(step1);
+        possibleStep.add(step2);
+        possibleStep.add(step3);
+        possibleStep.add(step4);
+        possibleStep.add(step5);
+        possibleStep.add(step6);
+        possibleStep.add(step7);
+        possibleStep.add(step8);
+
         return possibleStep;
     }
 }

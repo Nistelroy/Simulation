@@ -12,39 +12,38 @@ import java.util.Random;
 
 public class MapRender {
     Random random = new Random();
-    int notMoving;
+    int stationaryObject;
 
     public void creatingTheNewWorld(Map map) {
 
-        notMoving = Simulation.XX * Simulation.YY / 7;
-        int moving = Simulation.XX * Simulation.YY / 30;
+        stationaryObject = Simulation.XX * Simulation.YY / 7;
+        int movingObject = Simulation.XX * Simulation.YY / 30;
         while (true) {
             Coordinates coordinates1 = new Coordinates(random.nextInt(Simulation.XX ), random.nextInt(Simulation.YY ));
-            if (map.maps.entrySet().size() < notMoving) {
+            if (map.maps.entrySet().size() < stationaryObject) {
                 if (map.maps.get(coordinates1) == null) {
-                    Emtity emtity = new Grass(coordinates1);
+                    Grass emtity = new Grass(coordinates1);
                     map.setEmtity(coordinates1, emtity);
                 }
-            } else if (map.maps.entrySet().size() < notMoving * 2) {
+            } else if (map.maps.entrySet().size() < stationaryObject * 2) {
                 if (map.maps.get(coordinates1) == null) {
-                    Emtity emtity = new Rock(coordinates1);
+                    Rock emtity = new Rock(coordinates1);
+                    map.setEmtity(coordinates1, emtity);
+                }
+            } else if (map.maps.entrySet().size() < stationaryObject * 3) {
+                if (map.maps.get(coordinates1) == null) {
 
+                    Tree emtity = new Tree(coordinates1);
                     map.setEmtity(coordinates1, emtity);
                 }
-            } else if (map.maps.entrySet().size() < notMoving * 3) {
+            } else if (map.maps.entrySet().size() < stationaryObject * 3 + movingObject ) {
                 if (map.maps.get(coordinates1) == null) {
-
-                    Emtity emtity = new Tree(coordinates1);
+                    Herbivore emtity = new Herbivore(coordinates1);
                     map.setEmtity(coordinates1, emtity);
                 }
-            } else if (map.maps.entrySet().size() < notMoving * 3 + moving) {
+            } else if (map.maps.entrySet().size() < ((stationaryObject * 3 + movingObject * 2)-2)) {
                 if (map.maps.get(coordinates1) == null) {
-                    Emtity emtity = new Herbivore(coordinates1, 1);
-                    map.setEmtity(coordinates1, emtity);
-                }
-            } else if (map.maps.entrySet().size() < notMoving * 3 + moving * 2) {
-                if (map.maps.get(coordinates1) == null) {
-                    Emtity emtity = new Predator(coordinates1, 1);
+                    Predator emtity = new Predator(coordinates1);
                     map.setEmtity(coordinates1, emtity);
                 }
             } else {
