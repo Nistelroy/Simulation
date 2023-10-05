@@ -1,18 +1,19 @@
 package ru.yandex.practicum.process;
-import ru.yandex.practicum.Simulation;
-import ru.yandex.practicum.objects.*;
-import ru.yandex.practicum.objects.mouvingObjects.*;
-import ru.yandex.practicum.objects.notMouvingObjects.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import ru.yandex.practicum.Simulation;
+import ru.yandex.practicum.objects.Emtity;
+import ru.yandex.practicum.objects.mouvingObjects.Herbivore;
+import ru.yandex.practicum.objects.mouvingObjects.Predator;
+import ru.yandex.practicum.objects.notMouvingObjects.Grass;
+import ru.yandex.practicum.objects.notMouvingObjects.Rock;
+import ru.yandex.practicum.objects.notMouvingObjects.Tree;
+
 import java.util.Random;
 
 public class MapRender {
     Random random = new Random();
     int notMoving;
 
-    // List<Coordinates> noGrassCor = new ArrayList<>();
     public void creatingTheNewWorld(Map map) {
 
         notMoving = Simulation.XX * Simulation.YY / 7;
@@ -27,12 +28,12 @@ public class MapRender {
             } else if (map.maps.entrySet().size() < notMoving * 2) {
                 if (map.maps.get(coordinates1) == null) {
                     Emtity emtity = new Rock(coordinates1);
-                  //  noGrassCor.add(coordinates1);
+
                     map.setEmtity(coordinates1, emtity);
                 }
             } else if (map.maps.entrySet().size() < notMoving * 3) {
                 if (map.maps.get(coordinates1) == null) {
-                 //   noGrassCor.add(coordinates1);
+
                     Emtity emtity = new Tree(coordinates1);
                     map.setEmtity(coordinates1, emtity);
                 }

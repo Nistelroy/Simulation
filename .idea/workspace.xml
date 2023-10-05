@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2601058c-b938-4826-85f7-d70ec327affa" name="Changes" comment="next commit big refactor next turn grass">
+    <list default="true" id="2601058c-b938-4826-85f7-d70ec327affa" name="Changes" comment="refactor Creature class and finis logic of find free step">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/objects/mouvingObjects/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/objects/mouvingObjects/Creature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/objects/mouvingObjects/Herbivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/objects/mouvingObjects/Herbivore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/objects/mouvingObjects/Predator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/objects/mouvingObjects/Predator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/process/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/process/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/process/MapRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/process/MapRender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/process/Sort.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +55,7 @@
       <recent name="ru.yandex.practicum.process" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.yandex.practicum.objects.mouvingObjects" />
       <recent name="ru.yandex.practicum" />
     </key>
   </component>
@@ -96,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696433546099</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactor Creature class and finis logic of find free step">
+      <option name="closed" value="true" />
+      <created>1696502669802</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696502669803</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,7 +126,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="next commit pre big refactor" />
     <MESSAGE value="next commit big refactor next turn grass" />
-    <option name="LAST_COMMIT_MESSAGE" value="next commit big refactor next turn grass" />
+    <MESSAGE value="refactor Creature class and finis logic of find free step" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor Creature class and finis logic of find free step" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

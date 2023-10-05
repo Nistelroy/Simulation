@@ -13,7 +13,7 @@ import java.util.List;
 public class Action {
 
     List<Coordinates> grassCor = new ArrayList<>();
-
+    List<Coordinates> herbivoreCorS = new ArrayList<>();
 
     public List<Coordinates> findGrass(Map map) {
         for (int i = 0; i < Simulation.XX ; i++) {
@@ -27,6 +27,19 @@ public class Action {
             }
         }
         return grassCor;
+    }
+    public List<Coordinates> findHerbivoreCor(Map map) {
+        for (int i = 0; i < Simulation.XX ; i++) {
+            for (int j = 0; j < Simulation.YY; j++) {
+                Coordinates cor = new Coordinates(i, j);
+                if (map.maps.get(cor) != null) {
+                    if (Herbivore.class.equals(map.maps.get(cor).getClass())) {
+                        herbivoreCorS.add(cor);
+                    }
+                }
+            }
+        }
+        return herbivoreCorS;
     }
 
     public void nextTurn(Map map) {
@@ -52,23 +65,25 @@ public class Action {
                 }
             }
         }
-        System.out.println();
+
 
         for (int i = 0; i < herbivoreCor.size(); i++) {
 
-            System.out.println(herbivoreCor.get(i).height + " --" + " X "+ herbivoreCor.get(i).width + " --" + " Y herb "+ herbivoreCor.get(i).hashCode());
-            map.maps.get(herbivoreCor.get(i));
             Herbivore herbivore = (Herbivore) map.maps.get(herbivoreCor.get(i));
             Coordinates cor1 = herbivore.move(map);
             map.maps.put(cor1, herbivore);
             map.maps.remove(herbivoreCor.get(i));
-            System.out.println(herbivoreCor.get(i).height + " --" + " X "+ herbivoreCor.get(i).width + " --" + " Y herb "+ herbivoreCor.get(i).hashCode());
+
 
 
         }
         for (int i = 0; i < predatorCor.size(); i++) {
-            map.maps.get(predatorCor.get(i));
-            System.out.println("ВОлк найден");
+
+
+           Predator predator = (Predator) map.maps.get(predatorCor.get(i));
+           Coordinates cor1 = predator.move(map);
+           map.maps.put(cor1, predator);
+           map.maps.remove(predatorCor.get(i));
 
         }
     }
