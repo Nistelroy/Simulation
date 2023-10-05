@@ -52,24 +52,23 @@ public class Action {
                 }
             }
         }
+        System.out.println();
 
-        for (int i = 0; i < predatorCor.size(); i++) {
-            map.maps.get(predatorCor.get(i));
-            System.out.println("ВОлк найден");
-
-        }
         for (int i = 0; i < herbivoreCor.size(); i++) {
-            System.out.println(herbivoreCor.get(i).height + "---" + herbivoreCor.get(i).hashCode() + " зебра икс");
-            System.out.println(herbivoreCor.get(i).width + "---" + herbivoreCor.get(i).hashCode() + " зебра игрик");
+
+            System.out.println(herbivoreCor.get(i).height + " --" + " X "+ herbivoreCor.get(i).width + " --" + " Y herb "+ herbivoreCor.get(i).hashCode());
             map.maps.get(herbivoreCor.get(i));
-            System.out.println("овц найден");
             Herbivore herbivore = (Herbivore) map.maps.get(herbivoreCor.get(i));
             Coordinates cor1 = herbivore.move(map);
             map.maps.put(cor1, herbivore);
             map.maps.remove(herbivoreCor.get(i));
-            System.out.println(herbivoreCor.get(i).height + "---" + herbivoreCor.get(i).hashCode() + " зебра икс");
-            System.out.println(herbivoreCor.get(i).width + "---" + herbivoreCor.get(i).hashCode() + " зебра игрик");
+            System.out.println(herbivoreCor.get(i).height + " --" + " X "+ herbivoreCor.get(i).width + " --" + " Y herb "+ herbivoreCor.get(i).hashCode());
 
+
+        }
+        for (int i = 0; i < predatorCor.size(); i++) {
+            map.maps.get(predatorCor.get(i));
+            System.out.println("ВОлк найден");
 
         }
     }
