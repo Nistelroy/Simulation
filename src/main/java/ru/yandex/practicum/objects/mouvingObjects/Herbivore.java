@@ -19,10 +19,13 @@ public class Herbivore extends Creature {
         List<Coordinates> possibleStep = getPossibleStepHerb(coordinates.height,coordinates.width,map);
         
         int indexBestMove = getIndexGrassInGrassCoordinates(listGrassesCoordinates, possibleStep);
-        
-        coordinates.height = possibleStep.get(indexBestMove).height;
-        coordinates.width = possibleStep.get(indexBestMove).width;
-        return coordinates;
+
+        if (!possibleStep.isEmpty()) {
+            coordinates.height = possibleStep.get(indexBestMove).height;
+            coordinates.width = possibleStep.get(indexBestMove).width;
+
+        }
+      return coordinates;
     }
 
     private int getIndexGrassInGrassCoordinates(List<Coordinates> grassCor, List<Coordinates> possibleStep) {

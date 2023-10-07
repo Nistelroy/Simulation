@@ -1,4 +1,4 @@
-package ru.yandex.practicum.objects.notMouvingObjects;
+package ru.yandex.practicum.objects.notMovingObjects;
 
 import ru.yandex.practicum.objects.Emtity;
 import ru.yandex.practicum.process.Coordinates;

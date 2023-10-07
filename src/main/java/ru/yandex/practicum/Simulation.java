@@ -21,11 +21,14 @@ public class Simulation {
            System.out.println("Cделать один ход введите ' 1 ', запустить симуляцию введите ' 2 ' ");
            int userInput = scanner.nextInt();
            if (userInput == 2) {
+               mapRender.render(map);
                while (true) {
+                   scanner.close();
                    System.out.println();
-                   mapRender.render(map);
-                   Thread.sleep(1000);
                    action.nextTurn(map);
+                   Thread.sleep(1000);
+                   mapRender.render(map);
+
                }
            } else if (userInput == 1) {
                System.out.println();

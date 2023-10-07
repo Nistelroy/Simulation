@@ -2,8 +2,8 @@ package ru.yandex.practicum.objects.mouvingObjects;
 
 import ru.yandex.practicum.Simulation;
 import ru.yandex.practicum.objects.Emtity;
-import ru.yandex.practicum.objects.notMouvingObjects.Rock;
-import ru.yandex.practicum.objects.notMouvingObjects.Tree;
+import ru.yandex.practicum.objects.notMovingObjects.Rock;
+import ru.yandex.practicum.objects.notMovingObjects.Tree;
 import ru.yandex.practicum.process.Coordinates;
 import ru.yandex.practicum.process.Map;
 
@@ -56,6 +56,7 @@ public abstract class Creature extends Emtity {
 
         List<Coordinates> possibleStep = getCoordinates(height, width);
 
+
         for (int i = possibleStep.size()-1; i > -1; i--) {
             if (map.maps.get(possibleStep.get(i)) != null) {
                 if (Rock.class.equals(map.maps.get(possibleStep.get(i)).getClass())) {
@@ -81,6 +82,9 @@ public abstract class Creature extends Emtity {
                     }
                 }
             }
+        }
+        if (possibleStep.isEmpty()) {
+            possibleStep.add(0, new Coordinates(coordinates.height,coordinates.width));
         }
         return possibleStep;
     }

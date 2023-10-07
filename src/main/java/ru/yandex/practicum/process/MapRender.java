@@ -4,47 +4,46 @@ import ru.yandex.practicum.Simulation;
 import ru.yandex.practicum.objects.Emtity;
 import ru.yandex.practicum.objects.mouvingObjects.Herbivore;
 import ru.yandex.practicum.objects.mouvingObjects.Predator;
-import ru.yandex.practicum.objects.notMouvingObjects.Grass;
-import ru.yandex.practicum.objects.notMouvingObjects.Rock;
-import ru.yandex.practicum.objects.notMouvingObjects.Tree;
+import ru.yandex.practicum.objects.notMovingObjects.Grass;
+import ru.yandex.practicum.objects.notMovingObjects.Rock;
+import ru.yandex.practicum.objects.notMovingObjects.Tree;
 
 import java.util.Random;
 
 public class MapRender {
     Random random = new Random();
-    int stationaryObject;
+    public static int notMovingObject = Simulation.XX * Simulation.YY / 7;
 
+    public static int movingObject = Simulation.XX * Simulation.YY / 30;
     public void creatingTheNewWorld(Map map) {
 
-        stationaryObject = Simulation.XX * Simulation.YY / 7;
-        int movingObject = Simulation.XX * Simulation.YY / 30;
-        while (true) {
-            Coordinates coordinates1 = new Coordinates(random.nextInt(Simulation.XX ), random.nextInt(Simulation.YY ));
-            if (map.maps.entrySet().size() < stationaryObject) {
-                if (map.maps.get(coordinates1) == null) {
-                    Grass emtity = new Grass(coordinates1);
-                    map.setEmtity(coordinates1, emtity);
-                }
-            } else if (map.maps.entrySet().size() < stationaryObject * 2) {
-                if (map.maps.get(coordinates1) == null) {
-                    Rock emtity = new Rock(coordinates1);
-                    map.setEmtity(coordinates1, emtity);
-                }
-            } else if (map.maps.entrySet().size() < stationaryObject * 3) {
-                if (map.maps.get(coordinates1) == null) {
 
-                    Tree emtity = new Tree(coordinates1);
-                    map.setEmtity(coordinates1, emtity);
+        while (true) {
+            Coordinates coordinates = new Coordinates(random.nextInt(Simulation.XX ), random.nextInt(Simulation.YY ));
+            if (map.maps.entrySet().size() < notMovingObject) {
+                if (map.maps.get(coordinates) == null) {
+                    Grass emtity = new Grass(coordinates);
+                    map.setEmtity(coordinates, emtity);
                 }
-            } else if (map.maps.entrySet().size() < stationaryObject * 3 + movingObject ) {
-                if (map.maps.get(coordinates1) == null) {
-                    Herbivore emtity = new Herbivore(coordinates1);
-                    map.setEmtity(coordinates1, emtity);
+            } else if (map.maps.entrySet().size() < notMovingObject * 2) {
+                if (map.maps.get(coordinates) == null) {
+                    Rock emtity = new Rock(coordinates);
+                    map.setEmtity(coordinates, emtity);
                 }
-            } else if (map.maps.entrySet().size() < ((stationaryObject * 3 + movingObject * 2)-2)) {
-                if (map.maps.get(coordinates1) == null) {
-                    Predator emtity = new Predator(coordinates1);
-                    map.setEmtity(coordinates1, emtity);
+            } else if (map.maps.entrySet().size() < notMovingObject * 3) {
+                if (map.maps.get(coordinates) == null) {
+                    Tree emtity = new Tree(coordinates);
+                    map.setEmtity(coordinates, emtity);
+                }
+            } else if (map.maps.entrySet().size() < notMovingObject * 3 + movingObject ) {
+                if (map.maps.get(coordinates) == null) {
+                    Herbivore emtity = new Herbivore(coordinates);
+                    map.setEmtity(coordinates, emtity);
+                }
+            } else if (map.maps.entrySet().size() < ((notMovingObject * 3 + movingObject * 2)-2)) {
+                if (map.maps.get(coordinates) == null) {
+                    Predator emtity = new Predator(coordinates);
+                    map.setEmtity(coordinates, emtity);
                 }
             } else {
 
@@ -88,4 +87,6 @@ public class MapRender {
         }
 
     }
+
+
 
