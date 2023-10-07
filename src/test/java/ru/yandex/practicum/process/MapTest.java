@@ -16,20 +16,20 @@ public class MapTest {
     Coordinates coordinates = new Coordinates(1,2);
     Herbivore herbivore = new Herbivore(coordinates);
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         map.maps.put(coordinates, herbivore);
     }
 
     @Test
     public void isThereAHerbivoreCoordinatesTrue() {
-      Emtity herbivoreThis = map.maps.get(coordinates);
+      Emtity herbivoreTest = map.maps.get(coordinates);
 
-        assertEquals("В объект в мапе не совпадает с созданным",herbivore,herbivoreThis);
+        assertEquals("В объект в мапе не совпадает с созданным",herbivore,herbivoreTest);
 
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown(){
 
     map.maps.remove(coordinates);
 

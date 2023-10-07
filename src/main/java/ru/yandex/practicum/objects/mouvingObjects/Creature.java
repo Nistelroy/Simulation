@@ -34,7 +34,8 @@ public abstract class Creature extends Emtity {
                 }
             }
         }
-        if (coordinates.height == 0 || coordinates.height == Simulation.XX - 1 ||coordinates.width == 0 || coordinates.width == Simulation.YY - 1 ) {
+        if (coordinates.height == 0 || coordinates.height == Simulation.XX - 1
+                ||coordinates.width == 0 || coordinates.width == Simulation.YY - 1 ) {
 
             for (int j = 0; j < Simulation.XX/3; j++) {
                 for (int i = 0; i < possibleStep.size(); i++) {
@@ -68,7 +69,8 @@ public abstract class Creature extends Emtity {
                 }
             }
         }
-        if (coordinates.height == 0 || coordinates.height == Simulation.XX - 1 ||coordinates.width == 0 || coordinates.width == Simulation.YY - 1 ) {
+        if (coordinates.height == 0 || coordinates.height == Simulation.XX - 1
+                ||coordinates.width == 0 || coordinates.width == Simulation.YY - 1 ) {
 
             for (int j = 0; j < Simulation.XX/3; j++) {
                 for (int i = 0; i < possibleStep.size(); i++) {
