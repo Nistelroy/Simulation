@@ -1,4 +1,4 @@
-package ru.yandex.practicum.process;
+package ru.nistel.process;
 
 import java.util.Objects;
 

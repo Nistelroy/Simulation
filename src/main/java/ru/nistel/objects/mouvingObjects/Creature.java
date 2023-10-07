@@ -1,11 +1,11 @@
-package ru.yandex.practicum.objects.mouvingObjects;
+package ru.nistel.objects.mouvingObjects;
 
-import ru.yandex.practicum.Simulation;
-import ru.yandex.practicum.objects.Emtity;
-import ru.yandex.practicum.objects.notMovingObjects.Rock;
-import ru.yandex.practicum.objects.notMovingObjects.Tree;
-import ru.yandex.practicum.process.Coordinates;
-import ru.yandex.practicum.process.Map;
+import ru.nistel.Simulation;
+import ru.nistel.objects.Emtity;
+import ru.nistel.objects.notMovingObjects.Rock;
+import ru.nistel.objects.notMovingObjects.Tree;
+import ru.nistel.process.Coordinates;
+import ru.nistel.process.Map;
 
 import java.util.ArrayList;
 import java.util.List;

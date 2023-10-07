@@ -1,12 +1,12 @@
-package ru.yandex.practicum.process;
+package ru.nistel.process;
 
-import ru.yandex.practicum.Simulation;
-import ru.yandex.practicum.objects.Emtity;
-import ru.yandex.practicum.objects.mouvingObjects.Herbivore;
-import ru.yandex.practicum.objects.mouvingObjects.Predator;
-import ru.yandex.practicum.objects.notMovingObjects.Grass;
-import ru.yandex.practicum.objects.notMovingObjects.Rock;
-import ru.yandex.practicum.objects.notMovingObjects.Tree;
+import ru.nistel.Simulation;
+import ru.nistel.objects.Emtity;
+import ru.nistel.objects.mouvingObjects.Herbivore;
+import ru.nistel.objects.mouvingObjects.Predator;
+import ru.nistel.objects.notMovingObjects.Grass;
+import ru.nistel.objects.notMovingObjects.Rock;
+import ru.nistel.objects.notMovingObjects.Tree;
 
 import java.util.Random;
 

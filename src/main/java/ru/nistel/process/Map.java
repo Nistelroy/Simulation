@@ -1,6 +1,6 @@
-package ru.yandex.practicum.process;
+package ru.nistel.process;
 
-import ru.yandex.practicum.objects.Emtity;
+import ru.nistel.objects.Emtity;
 
 import java.util.HashMap;
 

@@ -1,11 +1,11 @@
-package ru.yandex.practicum.process;
+package ru.nistel.process;
 
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import ru.yandex.practicum.objects.Emtity;
-import ru.yandex.practicum.objects.mouvingObjects.Herbivore;
+import ru.nistel.objects.Emtity;
+import ru.nistel.objects.mouvingObjects.Herbivore;
 
 import static org.junit.Assert.assertEquals;
 

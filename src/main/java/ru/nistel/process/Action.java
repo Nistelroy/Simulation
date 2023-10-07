@@ -1,9 +1,9 @@
-package ru.yandex.practicum.process;
+package ru.nistel.process;
 
-import ru.yandex.practicum.Simulation;
-import ru.yandex.practicum.objects.mouvingObjects.Herbivore;
-import ru.yandex.practicum.objects.mouvingObjects.Predator;
-import ru.yandex.practicum.objects.notMovingObjects.Grass;
+import ru.nistel.Simulation;
+import ru.nistel.objects.mouvingObjects.Herbivore;
+import ru.nistel.objects.mouvingObjects.Predator;
+import ru.nistel.objects.notMovingObjects.Grass;
 
 import java.util.ArrayList;
 import java.util.List;

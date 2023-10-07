@@ -1,6 +1,6 @@
-package ru.yandex.practicum.objects;
+package ru.nistel.objects;
 
-import ru.yandex.practicum.process.Coordinates;
+import ru.nistel.process.Coordinates;
 
 public abstract class Emtity {
     public Coordinates coordinates;

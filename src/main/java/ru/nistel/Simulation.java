@@ -1,8 +1,8 @@
-package ru.yandex.practicum;
+package ru.nistel;
 
-import ru.yandex.practicum.process.Action;
-import ru.yandex.practicum.process.Map;
-import ru.yandex.practicum.process.MapRender;
+import ru.nistel.process.Action;
+import ru.nistel.process.Map;
+import ru.nistel.process.MapRender;
 
 import java.util.Scanner;
 

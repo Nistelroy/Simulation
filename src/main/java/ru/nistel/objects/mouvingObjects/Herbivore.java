@@ -1,9 +1,9 @@
-package ru.yandex.practicum.objects.mouvingObjects;
+package ru.nistel.objects.mouvingObjects;
 
-import ru.yandex.practicum.Simulation;
-import ru.yandex.practicum.process.Action;
-import ru.yandex.practicum.process.Coordinates;
-import ru.yandex.practicum.process.Map;
+import ru.nistel.Simulation;
+import ru.nistel.process.Action;
+import ru.nistel.process.Coordinates;
+import ru.nistel.process.Map;
 
 import java.util.List;
 
