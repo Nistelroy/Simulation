@@ -67,7 +67,8 @@ Random random = new Random();
         if (amountHerbivores > listHerbivoreCoordinates.size()){
             kill++;
             System.out.println("Произошло '"+ kill +"'-e убийство!");
-        } else amountHerbivores = listHerbivoreCoordinates.size();
+        }
+        amountHerbivores = listHerbivoreCoordinates.size();
 
         if (listGrassCoordinates.size() < (MapRender.notMovingObject/3) ) {
             setMoreGrass(map);
