@@ -18,6 +18,7 @@ public class Simulation {
         mapRender.creatingTheNewWorld(map);
         Action action = new Action();
         mapRender.go(map);
+        System.out.println();
         System.out.println("Cделать один ход введите ' 1 ', запустить симуляцию введите ' 2 ' ");
 
         while (true) {

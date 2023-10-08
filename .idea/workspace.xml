@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2601058c-b938-4826-85f7-d70ec327affa" name="Changes" comment="create user interface">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nistel/process/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/process/Action.java" afterDir="false" />
-    </list>
+    <list default="true" id="2601058c-b938-4826-85f7-d70ec327affa" name="Changes" comment="fix minor bag" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,7 +172,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696776879941</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fix counter kill">
+      <option name="closed" value="true" />
+      <created>1696777068315</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696777068315</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fix minor bag">
+      <option name="closed" value="true" />
+      <created>1696777332121</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1696777332121</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,7 +215,9 @@
     <MESSAGE value="fix way for directory" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
     <MESSAGE value="create user interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="create user interface" />
+    <MESSAGE value="fix counter kill" />
+    <MESSAGE value="fix minor bag" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix minor bag" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
