@@ -26,8 +26,8 @@ public class Simulation {
                 mapRender.repaint(map);
                 scanner.close();
                 while (true) {
-                    action.nextTurn(map);
                     mapRender.repaint(map);
+                    action.nextTurn(map);
                     Thread.sleep(1000);
                 }
             }
