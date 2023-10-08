@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2601058c-b938-4826-85f7-d70ec327affa" name="Changes" comment="fix little fix code style">
+    <list default="true" id="2601058c-b938-4826-85f7-d70ec327affa" name="Changes" comment="fix way for directory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/objects/Emtity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/objects/Emtity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/objects/mouvingObjects/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/objects/mouvingObjects/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/objects/mouvingObjects/Herbivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/objects/mouvingObjects/Herbivore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/objects/mouvingObjects/Predator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/objects/mouvingObjects/Predator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/objects/notMovingObjects/Grass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/objects/notMovingObjects/Grass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/objects/notMovingObjects/Rock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/objects/notMovingObjects/Rock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/objects/notMovingObjects/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/objects/notMovingObjects/Tree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/process/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/process/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/process/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/process/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/process/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/process/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/process/MapRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/process/MapRender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/process/MapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nistel/process/MapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nistel/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nistel/process/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/process/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nistel/process/MapRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/process/MapRender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +58,9 @@
       <recent name="" />
       <recent name="junit.framework.TestCase" />
     </key>
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="ru.nistel.process" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="ru.yandex.practicum.process" />
     </key>
@@ -75,44 +68,6 @@
       <recent name="ru.yandex.practicum.objects.mouvingObjects" />
       <recent name="ru.yandex.practicum" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="MapTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Simulation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.nistel.process.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.nistel.process" />
-      <option name="MAIN_CLASS_NAME" value="ru.nistel.process.MapTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Simulation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.yandex.practicum.process.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.yandex.practicum.process" />
-      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.process.MapTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.MapTest (1)" />
-        <item itemvalue="JUnit.MapTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -203,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696696998576</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix way for directory">
+      <option name="closed" value="true" />
+      <created>1696697510294</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696697510294</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,7 +190,8 @@
     <MESSAGE value="add first unit test" />
     <MESSAGE value="add create new Herbivore, Grass and add kill's point" />
     <MESSAGE value="fix little fix code style" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix little fix code style" />
+    <MESSAGE value="fix way for directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix way for directory" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

@@ -9,40 +9,38 @@ import java.util.Scanner;
 public class Simulation {
    public static final int XX = 10;
    public static final int YY = 10;
+
     public static void main(String[] args) throws InterruptedException {
+
         Scanner scanner = new Scanner(System.in);
         Map map = new Map();
         MapRender mapRender = new MapRender();
         mapRender.creatingTheNewWorld(map);
         Action action = new Action();
+        mapRender.go(map);
+        System.out.println("Cделать один ход введите ' 1 ', запустить симуляцию введите ' 2 ' ");
 
-       while (true) {
-           System.out.println();
-           System.out.println("Cделать один ход введите ' 1 ', запустить симуляцию введите ' 2 ' ");
-           int userInput = scanner.nextInt();
-           if (userInput == 2) {
-               mapRender.render(map);
-               while (true) {
-                   scanner.close();
-                   System.out.println();
-                   action.nextTurn(map);
-                   Thread.sleep(1000);
-                   mapRender.render(map);
+        while (true) {
+            int userInput = Integer.parseInt(scanner.next());
+            if (userInput == 2) {
+                mapRender.repaint(map);
+                scanner.close();
+                while (true) {
+                    action.nextTurn(map);
+                    mapRender.repaint(map);
+                    Thread.sleep(1000);
+                }
+            }
+            else if (userInput == 1) {
+                action.nextTurn(map);
+                mapRender.repaint(map);
+                System.out.println("Cделать один ход введите ' 1 ', запустить симуляцию введите ' 2 ' ");
 
-               }
-           } else if (userInput == 1) {
-               System.out.println();
-               mapRender.render(map);
-               action.nextTurn(map);
-           } else System.out.println("Неверный ввод. Cделать один ход введите ' 1 ', запустить симуляцию введите ' 2 ' ");
+            }
+            else System.out.println("Неверный ввод. Cделать один ход введите ' 1 ', запустить симуляцию введите ' 2 ' ");
 
-
-       }
+        }
     }
-
-
-
-
 }
 
 

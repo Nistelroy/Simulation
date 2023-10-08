@@ -13,7 +13,7 @@ public class Action {
 Random random = new Random();
     List<Coordinates> listGrassesCoordinate = new ArrayList<>();
     List<Coordinates> listHerbivoresCoordinate = new ArrayList<>();
-    int her = MapRender.movingObject;
+    int amountHerbivores = MapRender.movingObject;
     int kill = 0;
 
     public List<Coordinates> findAllGrasses(Map map) {
@@ -49,6 +49,7 @@ Random random = new Random();
         List<Coordinates> listPredatorCoordinates = new ArrayList<>();
         List<Coordinates> listHerbivoreCoordinates = new ArrayList<>();
         List<Coordinates> listGrassCoordinates = new ArrayList<>();
+
         for (int i = 0; i < Simulation.XX; i++) {
             for (int j = 0; j < Simulation.YY; j++) {
                 Coordinates coordinates = new Coordinates(i, j);
@@ -63,19 +64,16 @@ Random random = new Random();
                 }
             }
         }
-
-        if (her > listHerbivoreCoordinates.size()){
+        if (amountHerbivores > listHerbivoreCoordinates.size()){
             kill++;
-            System.out.print("Произошло '"+ kill +"'-e убийство!");
-            her = listHerbivoreCoordinates.size();
-        }else her= listHerbivoreCoordinates.size();
+            System.out.println("Произошло '"+ kill +"'-e убийство!");
+        } else amountHerbivores = listHerbivoreCoordinates.size();
+
         if (listGrassCoordinates.size() < (MapRender.notMovingObject/3) ) {
             setMoreGrass(map);
-
         }
         if (listHerbivoreCoordinates.size() == 1) {
             setMoreHerbivore(map);
-
         }
         if (listPredatorCoordinates.isEmpty()) {
             setMorePredator(map);
@@ -113,11 +111,11 @@ Random random = new Random();
         int x = 0;
         while (x < MapRender.movingObject) {
         Coordinates coordinates = new Coordinates(random.nextInt(Simulation.XX), random.nextInt(Simulation.YY));
-        if (map.maps.get(coordinates) == null) {
+            if (map.maps.get(coordinates) == null) {
             Herbivore emtity = new Herbivore(coordinates);
             map.setEmtity(coordinates, emtity);
             x++;
-        }
+            }
         }
     }
 
@@ -125,11 +123,11 @@ Random random = new Random();
         int x = 0;
         while (x < MapRender.notMovingObject) {
         Coordinates coordinates = new Coordinates(random.nextInt(Simulation.XX), random.nextInt(Simulation.YY));
-        if (map.maps.get(coordinates) == null) {
+            if (map.maps.get(coordinates) == null) {
             Grass emtity = new Grass(coordinates);
             map.setEmtity(coordinates, emtity);
             x++;
-        }
+            }
         }
 
     }
