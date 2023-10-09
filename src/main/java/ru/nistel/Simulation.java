@@ -10,22 +10,10 @@ import java.io.IOException;
 public class Simulation {
     public static final int XX = 10;
     public static final int YY = 10;
-
-    public static void setUserInput(boolean userInput) {
-        Simulation.userInput = userInput;
-    }
-
-    static boolean userInput = false;
-
-    public static void setUserInput2(boolean userInput2) {
-        Simulation.userInput2 = userInput2;
-    }
-
-    static boolean userInput2 = false;
-
+    static boolean isLeftBottom = false;
+    static boolean isRightBottom = false;
 
     public static void main(String[] args) throws InterruptedException, IOException {
-
 
         Map map = new Map();
         MapRender mapRender = new MapRender();
@@ -34,20 +22,27 @@ public class Simulation {
         mapRender.go(map);
         while (true) {
             while (true) {
-                if (userInput) {
+                if (isLeftBottom) {
                     mapRender.repaint(map);
                     while (true) {
                         mapRender.repaint(map);
                         action.nextTurn(map);
                         Thread.sleep(1000);
                     }
-                } else if (userInput2) {
+                } else if (isRightBottom) {
                     action.nextTurn(map);
                     mapRender.repaint(map);
-                    userInput2 = false;
+                    isRightBottom = false;
                 } else System.out.print("");
             }
         }
     }
+    public static void setIsLeftBottom(boolean isLeftBottom) {
+        Simulation.isLeftBottom = isLeftBottom;
+    }
+    public static void setIsRightBottom(boolean isRightBottom) {
+        Simulation.isRightBottom = isRightBottom;
+    }
+
 }
 
