@@ -24,7 +24,6 @@ public class Simulation {
     static boolean userInput2 = false;
 
 
-
     public static void main(String[] args) throws InterruptedException, IOException {
 
 
@@ -33,23 +32,22 @@ public class Simulation {
         mapRender.creatingTheNewWorld(map);
         Action action = new Action();
         mapRender.go(map);
-
-          while (true) {
-            if (userInput) {
-                mapRender.repaint(map);
-                while (true) {
+        while (true) {
+            while (true) {
+                if (userInput) {
                     mapRender.repaint(map);
+                    while (true) {
+                        mapRender.repaint(map);
+                        action.nextTurn(map);
+                        Thread.sleep(1000);
+                    }
+                } else if (userInput2) {
                     action.nextTurn(map);
-                    Thread.sleep(1000);
-                }
-            } else if (userInput2) {
-                action.nextTurn(map);
-                mapRender.repaint(map);
-                Thread.sleep(1000);
-
-            } else System.out.println();
+                    mapRender.repaint(map);
+                    userInput2 = false;
+                } else System.out.print("");
+            }
         }
     }
 }
-
 
