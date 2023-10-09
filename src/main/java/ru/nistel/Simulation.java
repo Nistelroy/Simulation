@@ -4,42 +4,50 @@ import ru.nistel.process.Action;
 import ru.nistel.process.Map;
 import ru.nistel.process.MapRender;
 
-import java.util.Scanner;
+import java.io.IOException;
+
 
 public class Simulation {
-   public static final int XX = 10;
-   public static final int YY = 10;
+    public static final int XX = 10;
+    public static final int YY = 10;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void setUserInput(boolean userInput) {
+        Simulation.userInput = userInput;
+    }
 
-        Scanner scanner = new Scanner(System.in);
+    static boolean userInput = false;
+
+    public static void setUserInput2(boolean userInput2) {
+        Simulation.userInput2 = userInput2;
+    }
+
+    static boolean userInput2 = false;
+
+
+
+    public static void main(String[] args) throws InterruptedException, IOException {
+
+
         Map map = new Map();
         MapRender mapRender = new MapRender();
         mapRender.creatingTheNewWorld(map);
         Action action = new Action();
         mapRender.go(map);
-        System.out.println();
-        System.out.println("Cделать один ход введите ' 1 ', запустить симуляцию введите ' 2 ' ");
 
-        while (true) {
-            int userInput = Integer.parseInt(scanner.next());
-            if (userInput == 2) {
+          while (true) {
+            if (userInput) {
                 mapRender.repaint(map);
-                scanner.close();
                 while (true) {
                     mapRender.repaint(map);
                     action.nextTurn(map);
                     Thread.sleep(1000);
                 }
-            }
-            else if (userInput == 1) {
+            } else if (userInput2) {
                 action.nextTurn(map);
                 mapRender.repaint(map);
-                System.out.println("Cделать один ход введите ' 1 ', запустить симуляцию введите ' 2 ' ");
+                Thread.sleep(1000);
 
-            }
-            else System.out.println("Неверный ввод. Cделать один ход введите ' 1 ', запустить симуляцию введите ' 2 ' ");
-
+            } else System.out.println();
         }
     }
 }

@@ -145,12 +145,14 @@ public class MapRender {
 
     class OneStep implements ActionListener {
         public void actionPerformed(ActionEvent event) {
-            System.out.println("Dont work, use consol please");
+            boolean i = true;
+            Simulation.setUserInput2(i);
         }
     }
     class NonStop implements ActionListener {
         public void actionPerformed(ActionEvent event) {
-            System.out.println("And here");
+            boolean i = true;
+            Simulation.setUserInput(i);
         }
     }
 
