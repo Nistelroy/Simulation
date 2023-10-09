@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2601058c-b938-4826-85f7-d70ec327affa" name="Changes" comment="fix bottom and fix new bag">
+    <list default="true" id="2601058c-b938-4826-85f7-d70ec327affa" name="Changes" comment="fix code stile and name variables">
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nistel/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nistel/process/MapRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nistel/process/MapRender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696834058338</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix code stile and name variables">
+      <option name="closed" value="true" />
+      <created>1696834285747</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1696834285747</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,7 +275,8 @@
     <MESSAGE value="fix minor bag" />
     <MESSAGE value="fix bottom and add new bag" />
     <MESSAGE value="fix bottom and fix new bag" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bottom and fix new bag" />
+    <MESSAGE value="fix code stile and name variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix code stile and name variables" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -284,7 +292,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/nistel/Simulation.java</url>
-          <line>22</line>
+          <line>24</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

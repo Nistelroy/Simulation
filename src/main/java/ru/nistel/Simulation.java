@@ -20,18 +20,18 @@ public class Simulation {
         mapRender.creatingTheNewWorld(map);
         Action action = new Action();
         mapRender.go(map);
+        action.nextTurn(map);
         while (true) {
             while (true) {
                 if (isLeftBottom) {
-                    mapRender.repaint(map);
                     while (true) {
                         mapRender.repaint(map);
                         action.nextTurn(map);
                         Thread.sleep(1000);
                     }
                 } else if (isRightBottom) {
-                    action.nextTurn(map);
                     mapRender.repaint(map);
+                    action.nextTurn(map);
                     isRightBottom = false;
                 } else System.out.print("");
             }
