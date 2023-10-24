@@ -14,7 +14,7 @@ public class Simulation {
     static boolean isRightBottom = false;
 
     public static void main(String[] args) throws InterruptedException, IOException {
-
+        Double i = 0.9;
         Map map = new Map();
         MapRender mapRender = new MapRender();
         mapRender.creatingTheNewWorld(map);
@@ -37,9 +37,11 @@ public class Simulation {
             }
         }
     }
+
     public static void setIsLeftBottom(boolean isLeftBottom) {
         Simulation.isLeftBottom = isLeftBottom;
     }
+
     public static void setIsRightBottom(boolean isRightBottom) {
         Simulation.isRightBottom = isRightBottom;
     }

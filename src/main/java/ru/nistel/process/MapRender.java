@@ -26,7 +26,7 @@ public class MapRender {
     public void creatingTheNewWorld(Map map) {
 
         while (true) {
-            Coordinates coordinates = new Coordinates(random.nextInt(Simulation.XX ), random.nextInt(Simulation.YY ));
+            Coordinates coordinates = new Coordinates(random.nextInt(Simulation.XX), random.nextInt(Simulation.YY));
             if (map.maps.entrySet().size() < notMovingObject) {
                 if (map.maps.get(coordinates) == null) {
                     Grass emtity = new Grass(coordinates);
@@ -42,12 +42,12 @@ public class MapRender {
                     Tree emtity = new Tree(coordinates);
                     map.setEmtity(coordinates, emtity);
                 }
-            } else if (map.maps.entrySet().size() < notMovingObject * 3 + movingObject ) {
+            } else if (map.maps.entrySet().size() < notMovingObject * 3 + movingObject) {
                 if (map.maps.get(coordinates) == null) {
                     Herbivore emtity = new Herbivore(coordinates);
                     map.setEmtity(coordinates, emtity);
                 }
-            } else if (map.maps.entrySet().size() < ((notMovingObject * 3 + movingObject * 2)-2)) {
+            } else if (map.maps.entrySet().size() < ((notMovingObject * 3 + movingObject * 2) - 2)) {
                 if (map.maps.get(coordinates) == null) {
                     Predator emtity = new Predator(coordinates);
                     map.setEmtity(coordinates, emtity);
@@ -59,21 +59,21 @@ public class MapRender {
         }
     }
 
-        private String getEmptySprite (Emtity emtity){
-            if (emtity.getClass().equals(Grass.class)) {
-                return "\uD83C\uDF40";
-            } else if (emtity.getClass().equals(Rock.class)) {
-                return "\uD83C\uDF33";
-            } else if (emtity.getClass().equals(Tree.class)) {
-                return "\uD83C\uDF32";
-            } else if (emtity.getClass().equals(Herbivore.class)) {
-                return "\uD83C\uDFC7";
-            } else if (emtity.getClass().equals(Predator.class)) {
-                return "\uD83D\uDE3E";
-            } else {
-                return "☘";
-            }
+    private String getEmptySprite(Emtity emtity) {
+        if (emtity.getClass().equals(Grass.class)) {
+            return "\uD83C\uDF40";
+        } else if (emtity.getClass().equals(Rock.class)) {
+            return "\uD83C\uDF33";
+        } else if (emtity.getClass().equals(Tree.class)) {
+            return "\uD83C\uDF32";
+        } else if (emtity.getClass().equals(Herbivore.class)) {
+            return "\uD83C\uDFC7";
+        } else if (emtity.getClass().equals(Predator.class)) {
+            return "\uD83D\uDE3E";
+        } else {
+            return "☘";
         }
+    }
 
     public void go(Map map) {
 
@@ -102,7 +102,6 @@ public class MapRender {
         panelB.add(colorButton);
 
 
-
         frame.getContentPane().add(BorderLayout.CENTER, mainPanel);
         frame.getContentPane().add(BorderLayout.SOUTH, panelB);
         frame.getContentPane().add(BorderLayout.NORTH, label);
@@ -114,11 +113,11 @@ public class MapRender {
     }
 
     private JPanel getjPanel(Map map, Font bigFont) {
-        GridLayout grid = new GridLayout(10,10);
+        GridLayout grid = new GridLayout(10, 10);
         JPanel mainPanel = new JPanel(grid);
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(10,25,10,10));
-        for (int i = 0; i < Simulation.XX ; i++) {
-            for (int j = 0; j < Simulation.YY ; j++) {
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 25, 10, 10));
+        for (int i = 0; i < Simulation.XX; i++) {
+            for (int j = 0; j < Simulation.YY; j++) {
                 Coordinates cor = new Coordinates(i, j);
                 if (map.maps.get(cor) == null) {
                     JLabel c = new JLabel();
@@ -138,7 +137,7 @@ public class MapRender {
 
     public void repaint(Map map) {
 
-        JPanel mainPanel = getjPanel(map,bigFont);
+        JPanel mainPanel = getjPanel(map, bigFont);
         frame.getContentPane().add(BorderLayout.CENTER, mainPanel);
         frame.setVisible(true);
     }
@@ -149,6 +148,7 @@ public class MapRender {
             Simulation.setIsRightBottom(yes);
         }
     }
+
     class NonStop implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             boolean yes = true;
