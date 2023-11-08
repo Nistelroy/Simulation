@@ -21,6 +21,11 @@ public class Simulation {
         Action action = new Action();
         mapRender.go(map);
         action.nextTurn(map);
+        System.out.println("Добро пожаловать в симуляцию 2d");
+        System.out.println("Автоматически генерируется мир заполненый травой и деревьями");
+        System.out.println("В мир добавляется травоядные и хищники");
+        System.out.println("Хищники ищут травоядных, травоядные ищут траву");
+        System.out.println("Если мир пустеет, то добавляются новые объекты");
         while (true) {
             while (true) {
                 if (isLeftBottom) {
